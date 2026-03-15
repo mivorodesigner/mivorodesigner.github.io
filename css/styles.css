@@ -150,19 +150,19 @@ box-shadow:0 12px 30px rgba(0,0,0,0.25);
 
 .hero-img{
 position:absolute;
-bottom:0;
+bottom:-10%;
 right:5%;
--webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 60%, rgba(0,0,0,0) 100%);
+-webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 50%, rgba(0,0,0,0) 87%);
 -webkit-mask-repeat: no-repeat;
 -webkit-mask-size: cover;
-mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 60%, rgba(0,0,0,0) 100%);
+mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 50%, rgba(0,0,0,0) 87%);
 mask-repeat: no-repeat;
 mask-size: cover;
 
 }
 
 .hero-img img{
-width:650px;
+width:850px;
 max-width:none;
 animation:floatHero 6s ease-in-out infinite;
 }
@@ -320,7 +320,7 @@ color:white;
 
 color:white;
 margin-right:10px;
-font-size:18px;
+font-size:25px;
 transition:all .3s ease;
 
 }
@@ -466,11 +466,12 @@ opacity:0;
 
 /* RESPONSIVE */
 
-@media (max-width:1291px){
+@media (max-width:1600px){
 
 .hero{
 padding:140px 8% 60px 8%;
 text-align:center;
+justify-content: center;
 }
 
 .hero-container{
@@ -478,7 +479,7 @@ grid-template-columns:1fr;
 }
 
 .hero-img{
-position:static; /* quita el absolute */
+position: static; /* quita el absolute */
 margin-top:40px;
 display:flex;
 justify-content:center;
@@ -486,8 +487,8 @@ justify-content:center;
 
 .hero-img img{
 position:static; /* reset */
-width:80%;
-max-width:320px;
+width:100%;
+max-width:420px;
 }
 
 .hero h1{
@@ -500,8 +501,6 @@ font-size:18px;
 
 }
 
-@media (max-width:600px){
-
 .whatsapp-float{
 
 width:55px;
@@ -509,7 +508,5 @@ height:55px;
 font-size:26px;
 bottom:20px;
 right:20px;
-
-}
 
 }
