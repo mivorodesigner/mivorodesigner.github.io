@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>MIVORO | Branding & Diseño</title>
+
+<link rel="stylesheet" href="css/styles.css">
+
+<!-- Icono Principal -->
+<link rel="icon" type="image/png" href="img/favicon.png">
+
+<!-- Google Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<!-- ICONOS -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<!-- ANIMACIONES -->
+<link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+<header>
+
+<div class="logo"><img src="img/Logo.png"></div>
+
+<nav>
+
+<a href="#inicio">Inicio</a>
+<a href="#servicios">Servicios</a>
+<a href="#portafolio">Portafolio</a>
+<a href="#contacto">Contacto</a>
+
+</nav>
+
+</header>
+
+<!-- HERO -->
+
+<section class="hero" id="inicio">
+
+<div class="hero-container">
+
+<div data-aos="fade-right">
+
+<h1>Llevamos tu empresa al siguiente nivel</h1>
+
+<p>Especialistas en branding, diseño gráfico y creación de identidad visual para empresas modernas.</p>
+
+<a href="#contacto" class="btn">Contáctanos</a>
+
+</div>
+
+<div class="hero-img" data-aos="fade-left">
+<img src="img/Guy.png" alt="Diseño">
+</div>
+
+</div>
+
+</section>
+
+<!-- SERVICIOS -->
+
+<section class="services" id="servicios">
+
+<h2 class="section-title">Nuestros Servicios</h2>
+
+<div class="service-grid">
+
+<div class="service" data-aos="fade-up">
+
+<i class="fa-solid fa-pen-nib"></i>
+<h3>Diseño de logotipos</h3>
+<p>Creación de logotipos profesionales que representan tu marca.</p>
+
+</div>
+
+<div class="service" data-aos="fade-up">
+
+<i class="fa-solid fa-palette"></i>
+<h3>Identidad de marca</h3>
+<p>Desarrollo de branding completo para empresas.</p>
+
+</div>
+
+<div class="service" data-aos="fade-up">
+
+<i class="fa-solid fa-bullhorn"></i>
+<h3>Publicidad</h3>
+<p>Piezas publicitarias profesionales para marketing.</p>
+
+</div>
+
+<div class="service" data-aos="fade-up">
+
+<i class="fa-solid fa-hashtag"></i>
+<h3>Redes Sociales</h3>
+<p>Diseño de contenido atractivo para redes sociales.</p>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- PORTFOLIO -->
+
+<section class="portfolio" id="portafolio">
+
+<h2 class="section-title">Nuestro Trabajo</h2>
+
+<div class="portfolio-grid">
+
+<img src="img/port1.png">
+<img src="img/port2.png">
+<img src="img/port3.png">
+
+</div>
+
+</section>
+
+<!-- CTA -->
+
+<section class="cta" id="contacto">
+
+<h2>¿Listo para mejorar tu marca?</h2>
+
+<p>Contáctanos hoy mismo y llevemos tu empresa al siguiente nivel.</p>
+
+<br>
+
+<a class="btn" href="https://wa.me/51907290867" target="_blank">
+
+<i class="fa-brands fa-whatsapp"></i> WhatsApp
+
+</a>
+
+</section>
+
+<!-- FOOTER -->
+
+<footer>
+
+<div class="footer-container">
+
+<div>
+
+<img src="img/Logo.png" class="logo">
+
+<p>Somos un grupo de profesionales dedicados a la creación de piezas gráficas, logos y manuales de marca.</p>
+
+</div>
+
+<div>
+
+<h4>Servicios</h4>
+
+<p>Logotipos</p>
+<p>Branding</p>
+<p>Redes Sociales</p>
+
+</div>
+
+<div>
+
+<h4>Redes</h4>
+
+<div class="social">
+
+<a href="https://www.facebook.com/mivoro.designer" target="_blank"><i class="fab fa-facebook"></i></a>
+<a href="https://www.instagram.com/mivoro.designer/" target="_blank"><i class="fab fa-instagram"></i></a>
+<a href="https://www.tiktok.com/@mivoro.designer" target="_blank"><i class="fab fa-tiktok"></i></a>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="footer-bottom">
+
+© 2026 MIVORO | Todos los derechos reservados
+
+</div>
+
+</footer>
+
+<a href="https://wa.me/51907290867" 
+class="whatsapp-float" 
+target="_blank">
+
+<i class="fa-brands fa-whatsapp"></i>
+
+</a>
+
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+
+<script>
+
+AOS.init({
+duration:1000,
+once:true
+});
+
+</script>
+
+<script>
+
+window.addEventListener("scroll", function(){
+
+const header = document.querySelector("header");
+
+if(window.scrollY > 50){
+header.classList.add("scrolled");
+}else{
+header.classList.remove("scrolled");
+}
+
+});
+
+</script>
+
+</body>
+</html>
