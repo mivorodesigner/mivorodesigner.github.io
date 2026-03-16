@@ -162,9 +162,10 @@ mask-size: cover;
 }
 
 .hero-img img{
-width:850px;
-max-width:none;
-animation:floatHero 6s ease-in-out infinite;
+  width: clamp(80vh, 50vw, 90vh);
+  max-width: 850px;
+  height: auto;
+  animation: floatHero 6s ease-in-out infinite;
 }
 
 @keyframes floatHero{
@@ -676,7 +677,7 @@ nav.active{
 
 /* RESPONSIVE */
 
-@media (max-width:1600px){
+@media (max-width:1400px){
 
 nav{
 
@@ -726,5 +727,3 @@ bottom:20px;
 right:20px;
 
 }
-
-
