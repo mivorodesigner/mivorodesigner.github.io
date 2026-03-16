@@ -150,7 +150,7 @@ box-shadow:0 12px 30px rgba(0,0,0,0.25);
 
 .hero-img{
 position:absolute;
-bottom:-10%;
+bottom:-15%;
 right:5%;
 -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 50%, rgba(0,0,0,0) 87%);
 -webkit-mask-repeat: no-repeat;
@@ -680,9 +680,7 @@ nav.active{
 @media (max-width:1400px){
 
 nav{
-
     width:30%;
-
 }
 
 .hero{
@@ -715,15 +713,5 @@ font-size:34px;
 .hero p{
 font-size:18px;
 }
-
-}
-
-.whatsapp-float{
-
-width:55px;
-height:55px;
-font-size:26px;
-bottom:20px;
-right:20px;
 
 }
