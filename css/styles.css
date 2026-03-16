@@ -680,7 +680,7 @@ nav.active{
 @media (max-width:1400px){
 
 nav{
-    width:30%;
+    width:100%;
 }
 
 .hero{
