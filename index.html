@@ -10,15 +10,8 @@
 <meta property="og:image:height" content="630">
 <meta property="og:url" content="https://mivorodesigner.github.io/">
 <meta property="og:type" content="website">
-<meta name="twitter:card" content="summary_large_image">
 
-<!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-5C4JH722');</script>
-<!-- End Google Tag Manager -->
+<meta name="twitter:card" content="summary_large_image">
 
 <title>MIVORO | Branding & Diseño</title>
 
@@ -41,21 +34,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
 </head>
 
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-LHWR6D5MRJ"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-LHWR6D5MRJ');
-</script>
-
 <body>
-<!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5C4JH722"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<!-- End Google Tag Manager (noscript) -->
+
 <header>
 
 <div class="logo"><img src="img/Logo.png"></div>
@@ -225,13 +205,63 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 </footer>
 
-<a href="https://wa.me/51907290867" 
-class="whatsapp-float" 
-target="_blank">
+<!-- BOTON WHATSAPP -->
 
+<div class="whatsapp-container">
+
+<button class="whatsapp-float" id="whatsappBtn">
 <i class="fa-brands fa-whatsapp"></i>
+</button>
 
+<div class="whatsapp-box" id="whatsappBox">
+
+<div class="whatsapp-header">
+
+<span>¿Cómo podemos ayudarte?</span>
+
+<button class="close-wsp" id="closeWsp">
+<i class="fa-solid fa-xmark"></i>
+</button>
+
+</div>
+
+<div class="whatsapp-options">
+
+<a href="https://wa.me/51907290867?text=Hola,%20quiero%20información%20sobre%20diseño%20de%20logos" target="_blank">
+<i class="fa-solid fa-pen-nib"></i>
+Diseño de logotipos
 </a>
+
+<a href="https://wa.me/51907290867?text=Hola,%20quiero%20información%20sobre%20branding%20e%20identidad%20visual" target="_blank">
+<i class="fa-solid fa-palette"></i>
+Branding e identidad
+</a>
+
+<a href="https://wa.me/51907290867?text=Hola,%20quiero%20información%20sobre%20diseño%20para%20redes%20sociales" target="_blank">
+<i class="fa-solid fa-hashtag"></i>
+Diseño para redes
+</a>
+
+<a href="https://wa.me/51907290867?text=Hola,%20quiero%20información%20sobre%20publicidad%20y%20marketing%20visual" target="_blank">
+<i class="fa-solid fa-bullhorn"></i>
+Publicidad
+</a>
+
+<a href="https://wa.me/51907290867?text=Hola,%20quiero%20cotizar%20un%20proyecto%20de%20diseño" target="_blank">
+<i class="fa-solid fa-briefcase"></i>
+Cotizar proyecto
+</a>
+
+<a href="https://wa.me/51907290867?text=Hola,%20quiero%20asesoría%20sobre%20mi%20marca" target="_blank">
+<i class="fa-solid fa-lightbulb"></i>
+Asesoría de marca
+</a>
+
+</div>
+
+</div>
+
+</div>
 
 <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
 
@@ -278,6 +308,22 @@ header.classList.add("scrolled");
 header.classList.remove("scrolled");
 }
 
+});
+
+</script>
+
+<script>
+
+const wspBtn = document.getElementById("whatsappBtn");
+const wspBox = document.getElementById("whatsappBox");
+const closeWsp = document.getElementById("closeWsp");
+
+wspBtn.addEventListener("click", () => {
+wspBox.classList.toggle("active");
+});
+
+closeWsp.addEventListener("click", () => {
+wspBox.classList.remove("active");
 });
 
 </script>
