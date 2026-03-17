@@ -150,7 +150,7 @@ box-shadow:0 12px 30px rgba(0,0,0,0.25);
 
 .hero-img{
 position:absolute;
-bottom:-15%;
+bottom:-9%;
 right:5%;
 -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 50%, rgba(0,0,0,0) 87%);
 -webkit-mask-repeat: no-repeat;
