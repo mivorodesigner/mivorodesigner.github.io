@@ -455,7 +455,14 @@
         const navMenu = document.getElementById("nav-menu");
         const overlay = document.getElementById("overlay");
 
+        // Detectar si estamos en móvil
+        function isMobile() {
+            return window.innerWidth < 768;
+        }
+
         menuToggle.addEventListener("click", () => {
+
+            if (!isMobile()) return;
 
             if (navMenu.style.height && navMenu.style.height !== "0px") {
                 navMenu.style.height = "0px";
@@ -467,25 +474,26 @@
 
             menuToggle.classList.toggle("active");
 
-            // refrescar AOS
             if (typeof AOS !== "undefined") {
-                setTimeout(() => {
-                    AOS.refresh();
-                }, 300);
+                setTimeout(() => AOS.refresh(), 300);
             }
         });
 
-        // CERRAR MENU AL HACER CLICK EN LINK
+        // CERRAR SOLO EN MOVIL
         document.querySelectorAll("#nav-menu a").forEach(link => {
             link.addEventListener("click", () => {
+                if (!isMobile()) return;
+
                 navMenu.style.height = "0px";
                 menuToggle.classList.remove("active");
                 overlay.classList.remove("active");
             });
         });
 
-        // CERRAR MENU AL HACER CLICK EN EL FONDO
+        // OVERLAY
         overlay.addEventListener("click", () => {
+            if (!isMobile()) return;
+
             navMenu.style.height = "0px";
             menuToggle.classList.remove("active");
             overlay.classList.remove("active");
