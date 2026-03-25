@@ -1086,4 +1086,10 @@ header.scrolled {
         justify-content: center;
     }
 
+    #toast {
+
+        text-align: center;
+
+    }
+
 }
