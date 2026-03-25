@@ -68,13 +68,15 @@ nav a::after {
     content: "";
     position: absolute;
     left: 0;
-    bottom: -5px; /* separa la línea del texto */
+    bottom: -5px;
+    /* separa la línea del texto */
     width: 100%;
     height: 2px;
     background-color: white;
 
     transform: scaleX(0);
-    transform-origin: right; /* empieza desde la derecha */
+    transform-origin: right;
+    /* empieza desde la derecha */
     transition: transform 0.3s ease;
 }
 
@@ -85,7 +87,8 @@ nav a:hover {
 
 nav a:hover::after {
     transform: scaleX(1);
-    transform-origin: left; /* se expande hacia la izquierda */
+    transform-origin: left;
+    /* se expande hacia la izquierda */
 }
 
 /* HERO */
@@ -856,7 +859,7 @@ header.scrolled {
 
 .preguntas {
 
-    padding: 50px 8% 100px ;
+    padding: 50px 8% 100px;
     background: white;
 
 }
@@ -870,55 +873,43 @@ header.scrolled {
 }
 
 /* ITEM */
-
 .faq-item {
     background: #fff;
     border-radius: 12px;
     overflow: hidden;
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
-    transition: .3s;
 }
 
 /* PREGUNTA */
-
 .faq-question {
     display: flex;
     justify-content: space-between;
     align-items: center;
-
     padding: 18px 20px;
     cursor: pointer;
-
     font-family: 'Montserrat';
     font-size: 18px;
     font-weight: bold;
 }
 
 .faq-question i {
-    transition: .3s;
+    transition: transform 0.3s;
 }
 
 /* RESPUESTA */
-
 .faq-answer {
-    max-height: 0;
+    height: 0;
     overflow: hidden;
-    transition: max-height .4s ease;
+    transition: height 0.3s ease;
     padding: 0 20px;
 }
 
 .faq-answer p {
     padding-bottom: 15px;
-    font-style: normal;
     color: #555;
 }
 
 /* ACTIVO */
-
-.faq-item.active .faq-answer {
-    max-height: 200px;
-}
-
 .faq-item.active .faq-question i {
     transform: rotate(180deg);
 }
@@ -947,62 +938,96 @@ header.scrolled {
 @media (max-width:1400px) {
 
     /* MENU */
-
     nav {
         position: absolute;
         top: 100%;
         right: 0;
-        /* ahora se pega al lado derecho */
-
         width: 100%;
-
         background: white;
 
-        flex-direction: column;
-        align-items: stretch;
-
-        max-height: 0;
+        height: 0;
         overflow: hidden;
 
-        transition: max-height .4s ease;
-
+        transition: height 0.4s ease;
+        z-index: 1000;
     }
 
-    /* LINKS DEL MENU */
+    /* CONTENIDO INTERNO (AOS) */
+    .nav-content {
+        display: flex;
+        flex-direction: column;
+    }
 
+    /* LINKS */
     nav a {
         display: block;
         padding: 15px;
         margin: 0;
-
         color: purple;
         text-decoration: none;
-
-        text-align: left;
-        /* texto sigue alineado a la izquierda */
-
         border-bottom: 1px solid #e0e0e0;
-
-        transition: background .3s, color .3s;
+        transition: background 0.3s, color 0.3s;
     }
-
-    /* HOVER */
 
     nav a:hover {
         background: #f5f0ff;
         color: #6a0dad;
     }
 
-    /* MENU ACTIVO */
-
-    nav.active {
-        max-height: 300px;
+    /* BOTON HAMBURGUESA */
+    .menu-toggle {
+        width: 30px;
+        height: 22px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        cursor: pointer;
     }
 
-    /* BOTON MENU EN MOVIL */
-
-    .menu-toggle {
+    /* LINEAS */
+    .menu-toggle span {
         display: block;
+        height: 3.5px;
+        width: 100%;
+        background: white;
+        border-radius: 4px;
+        transition: all 0.4s cubic-bezier(0.77, 0, 0.18, 1);
+    }
+
+    /* ANIMACION A X */
+    .menu-toggle.active span:nth-child(1) {
+        transform: translateY(9px) rotate(45deg);
+    }
+
+    .menu-toggle.active span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .menu-toggle.active span:nth-child(3) {
+        transform: translateY(-9px) rotate(-45deg);
+    }
+
+    /* OVERLAY OSCURO */
+    #overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+
+        background: rgba(0, 0, 0, 0.5);
+
+        opacity: 0;
+        visibility: hidden;
+
+        transition: opacity 0.3s ease;
+        z-index: 900;
+    }
+
+    /* CUANDO ESTA ACTIVO */
+    #overlay.active {
+        opacity: 1;
+        visibility: visible;
     }
 
     .hero {
