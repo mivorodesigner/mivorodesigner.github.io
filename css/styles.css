@@ -14,7 +14,7 @@ html {
 
 body {
     font-family: 'Poppins', sans-serif;
-    background: #f5f5f5;
+    background: white;
     color: #333;
 }
 
@@ -56,18 +56,36 @@ header {
 }
 
 nav a {
-
+    position: relative;
     color: white;
     margin-left: 25px;
     font-weight: 500;
-    transition: .3s;
-
+    text-decoration: none;
 }
 
+/* Línea oculta inicialmente */
+nav a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -5px; /* separa la línea del texto */
+    width: 100%;
+    height: 2px;
+    background-color: white;
+
+    transform: scaleX(0);
+    transform-origin: right; /* empieza desde la derecha */
+    transition: transform 0.3s ease;
+}
+
+/* Hover */
 nav a:hover {
+    color: white;
+}
 
-    color: var(--orange);
-
+nav a:hover::after {
+    transform: scaleX(1);
+    transform-origin: left; /* se expande hacia la izquierda */
 }
 
 /* HERO */
@@ -312,6 +330,47 @@ nav a:hover {
     transform: scale(1.1);
 }
 
+/* NOTIFICACION (estado base oculto) */
+.whatsapp-float::after {
+    content: "1";
+    position: absolute;
+
+    top: -5px;
+    right: -5px;
+
+    width: 20px;
+    height: 20px;
+
+    background: red;
+    color: white;
+
+    font-size: 12px;
+    font-weight: bold;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+    box-shadow: 0 0 0 2px white;
+
+    opacity: 0;
+    transform: scale(0);
+    transition: .3s ease;
+}
+
+/* CUANDO APARECE */
+.whatsapp-float.show-notif::after {
+    opacity: 1;
+    transform: scale(1);
+}
+
+/* CUANDO SE OCULTA */
+.whatsapp-float.hide-notif::after {
+    opacity: 0;
+    transform: scale(0);
+}
+
 /* CAJA */
 
 .whatsapp-box {
@@ -424,66 +483,6 @@ nav a:hover {
     color: rgb(255, 255, 255);
     cursor: pointer;
 }
-
-/* MENU */
-
-nav {
-    position: absolute;
-    top: 100%;
-    right: 0;
-    /* ahora se pega al lado derecho */
-
-    width: 20%;
-
-    background: white;
-
-    flex-direction: column;
-    align-items: stretch;
-
-    max-height: 0;
-    overflow: hidden;
-
-    transition: max-height .4s ease;
-
-}
-
-/* LINKS DEL MENU */
-
-nav a {
-    display: block;
-    padding: 15px;
-    margin: 0;
-
-    color: purple;
-    text-decoration: none;
-
-    text-align: left;
-    /* texto sigue alineado a la izquierda */
-
-    border-bottom: 1px solid #e0e0e0;
-
-    transition: background .3s, color .3s;
-}
-
-/* HOVER */
-
-nav a:hover {
-    background: #f5f0ff;
-    color: #6a0dad;
-}
-
-/* MENU ACTIVO */
-
-nav.active {
-    max-height: 300px;
-}
-
-/* BOTON MENU EN MOVIL */
-
-.menu-toggle {
-    display: block;
-}
-
 
 /* SERVICIOS */
 
@@ -702,6 +701,54 @@ footer {
 
 }
 
+.enlaces a {
+
+    color: #aaa;
+    transition: all .3s ease;
+
+}
+
+.enlaces a:hover {
+
+    color: var(--orange);
+    transform: translateY(-3px);
+
+}
+
+#toast {
+    position: fixed;
+    bottom: 25px;
+    left: 50%;
+    transform: translateX(-50%) translateY(100px);
+    background: linear-gradient(120deg, var(--purple), var(--pink));
+    color: #fff;
+    padding: 10px 18px;
+    border-radius: 20px;
+    font-size: 14px;
+    opacity: 0;
+    transition: all 0.35s ease;
+    pointer-events: none;
+}
+
+#toast.show {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+}
+
+.contactanos a {
+
+    color: #aaa;
+    transition: all .3s ease;
+
+}
+
+.contactanos a:hover {
+
+    color: var(--orange);
+    transform: translateY(-3px);
+
+}
+
 .social a {
 
     color: white;
@@ -783,12 +830,179 @@ header.scrolled {
 
 }
 
+/* FAQ PRO */
+
+/* HERO INTERNO */
+
+.hero-small {
+    min-height: 30vh;
+    display: flex;
+    align-items: center;
+    padding: 120px 8% 30px 8%;
+}
+
+.hero-text {
+    max-width: 600px;
+}
+
+.hero-small h1 {
+    font-size: 42px;
+}
+
+.hero-small p {
+    font-size: 16px;
+    opacity: 0.9;
+}
+
+.preguntas {
+
+    padding: 50px 8% 100px ;
+    background: white;
+
+}
+
+.faq-container {
+    max-width: 800px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+/* ITEM */
+
+.faq-item {
+    background: #fff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+    transition: .3s;
+}
+
+/* PREGUNTA */
+
+.faq-question {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 18px 20px;
+    cursor: pointer;
+
+    font-family: 'Montserrat';
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.faq-question i {
+    transition: .3s;
+}
+
+/* RESPUESTA */
+
+.faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height .4s ease;
+    padding: 0 20px;
+}
+
+.faq-answer p {
+    padding-bottom: 15px;
+    font-style: normal;
+    color: #555;
+}
+
+/* ACTIVO */
+
+.faq-item.active .faq-answer {
+    max-height: 200px;
+}
+
+.faq-item.active .faq-question i {
+    transform: rotate(180deg);
+}
+
+/* TERMINOS */
+
+.terminos {
+
+    padding: 50px 8%;
+    background: white;
+
+}
+
+.terms-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.terms-container h3 {
+    font-family: 'Montserrat';
+    margin-top: 20px;
+}
+
 /* RESPONSIVE */
 
 @media (max-width:1400px) {
 
+    /* MENU */
+
     nav {
+        position: absolute;
+        top: 100%;
+        right: 0;
+        /* ahora se pega al lado derecho */
+
         width: 100%;
+
+        background: white;
+
+        flex-direction: column;
+        align-items: stretch;
+
+        max-height: 0;
+        overflow: hidden;
+
+        transition: max-height .4s ease;
+
+    }
+
+    /* LINKS DEL MENU */
+
+    nav a {
+        display: block;
+        padding: 15px;
+        margin: 0;
+
+        color: purple;
+        text-decoration: none;
+
+        text-align: left;
+        /* texto sigue alineado a la izquierda */
+
+        border-bottom: 1px solid #e0e0e0;
+
+        transition: background .3s, color .3s;
+    }
+
+    /* HOVER */
+
+    nav a:hover {
+        background: #f5f0ff;
+        color: #6a0dad;
+    }
+
+    /* MENU ACTIVO */
+
+    nav.active {
+        max-height: 300px;
+    }
+
+    /* BOTON MENU EN MOVIL */
+
+    .menu-toggle {
+        display: block;
     }
 
     .hero {
